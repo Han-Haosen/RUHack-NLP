@@ -3,26 +3,40 @@ var router = express.Router();
 const multer = require("multer");
 const fs = require('fs');
 const path = require('path');
-const vision = require('@google-cloud/vision');
-const client = new vision.ImageAnnotatorClient();
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   res.json('a');
 });
 const upload = multer({
-  dest:"D:/image"
+  dest: "D:/image"
 });
+async function quickstart(targetPath) {
+  // Imports the Google Cloud client library
+  const vision = require('@google-cloud/vision');
 
-router.post('/imageUpload',upload.single("pic"), function(req, res, next) {
+  // Creates a client
+  const client = new vision.ImageAnnotatorClient();
+
+  // Performs label detection on the image file
+
+  const [result] = await client.documentTextDetection(targetPath);
+  const fullTextAnnotation = result.fullTextAnnotation;
+  console.log(`Full text: ${fullTextAnnotation.text}`);
+  return fullTextAnnotation.text;
+}
+router.post('/imageUpload', upload.single("pic"), function (req, res, next) {
   const tempPath = req.file.path;
   console.log(tempPath);
   var targetPath = path.join("D:/image", req.file.originalname);
   console.log(targetPath);
-  fs.rename(tempPath,targetPath);
-  const [result] = client.documentTextDetection(fileName);
-  const fullTextAnnotation = result.fullTextAnnotation; 
-console.log(`Full text: ${fullTextAnnotation.text}`)
-  res.json('abc');
+  fs.rename(tempPath, targetPath, () => {
+    quickstart(targetPath).then((value)=>{
+      res.json({
+        text:value
+      })
+    });
+  });
+ 
 });
 
 module.exports = router;
