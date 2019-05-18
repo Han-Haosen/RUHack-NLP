@@ -7,8 +7,10 @@ const express = require('express');
 const router = express.Router();
 // app const
 const app = express();
-
+const retext = require('retext');
+const keywords = require('retext-keywords');
 // setting local
+var toString = require('nlcst-to-string')
 app.use(express.static('/home/faheem/Desktop/ruhacks/RUHack-NLP-Backend/server/public/html')); 
 
 /* GET home page. */
@@ -19,7 +21,7 @@ router.get('/', function (req, res, next) {
 });
 
 const upload = multer({
-  dest: "/home/faheem/Desktop/ruhacks/RUHack-NLP-Backend/server/images/"
+  dest: "./images"
 });
 
 // sending the image for ocr
@@ -49,8 +51,34 @@ function summarize(textSent) {
       .end(function (result) {
         returnValue.text = JSON.parse(textSent).txt;
         returnValue.summary = result.body.summary;
-        return resolve(returnValue);
+        extractKeyword(returnValue.text).then((keywords) => {
+          console.log(keywords);
+          returnValue.keywords = keywords;
+          return resolve(returnValue);
+        })
       });
+  })
+}
+
+function extractKeyword(text) {
+  return new Promise((resolve, reject) => {
+    var returnValue = [];
+    retext()
+    .use(keywords).process(text,(err,file) => {
+      file.data.keywords.forEach((keyword) => {
+        console.log(toString(keyword.matches[0].node));
+        returnValue.push(toString(keyword.matches[0].node));
+      })
+      file.data.keyphrases.forEach((phrase) => {
+        console.log(phrase.matches[0].nodes.map(stringify).join(''));
+        returnValue.push(phrase.matches[0].nodes.map(stringify).join(''));
+        function stringify(value) {
+          return toString(value)
+        }
+      })
+    })
+    let unique = [...new Set(returnValue)];
+    resolve(unique);
   })
 }
 
@@ -71,6 +99,7 @@ function writeJsonToFile(newReturnValue) {
 // clean json data, and adding stats
 function clean_json(returnValue){
   // creating a new json with stats
+
   var newReturnValue = {
     original:{
       text: returnValue.text,
@@ -87,7 +116,8 @@ function clean_json(returnValue){
         sentenceCount: returnValue.summary.split('.').length,
         averageReadTime: Math.floor(returnValue.summary.length / 200)
       }
-    }
+    },
+    keywords:returnValue.keywords.join(", ")
   }
   console.log(newReturnValue);
   // write json to file

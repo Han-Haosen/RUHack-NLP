@@ -1,18 +1,19 @@
 {
     "original": {
-        "text": "/* GET home page. */\nrouter.get('7', function (req, res, next) {\nres.json ('a');\nconst upload = multer({\ndest: \"uploads/\"\nasync function quickstart(targetPath) {\n// Imports the Google Cloud client library\nconst vision = require( 'google-cloud/vision');\n// Creates a client\nconst client = new vision. ImageAnnotatorClient();\n// Performs label detection on the image file\nconst result = await client.documentTextDetection(targetPath)\nconst fullTextAnnotation = result. fullTextAnnotation;\nconsole.log('Full text: ${fullTextAnnotation text});\nreturn fullTextAnnotation. text:\nrouter.post('/imageUpload', upload.single pic\"), function (req, res, next) {\nconst tempPath = req.file.path;\nvar targetPath = path.join(\"uploads/\", reg.file.originalname);\nfs.rename (tempPath, targetPath, () => {\nquickstart(targetPath).then( (value)=>{\nres.json {\n",
+        "text": "Eberhard Louis, Duke of Württemberg, appointed Philipp Joseph Jenisch to direct\nthe work and construction began in 1704. In 1707, Jenisch was replaced with\nJohann Friedrich Nette, who completed the majority of the palace and\nsurrounding gardens. Nette died in 1714, and Donato Giuseppe Frisoni finished\nmuch of the palace facades. In the final year of construction, Eberhard Louis died\nand the Neue Hauptbau's interiors were left incomplete. Charles Eugene's court\narchitect, Philippe de La Guêpière, completed and refurbished parts of the New\nHauptbau in the Rococo style, especially the palace theatre. Charles Eugene\nabandoned the palace for Stuttgart in 1775. Duke Frederick II, later King Frederick\n1, began using Ludwigsburg as his summer residence in the last years of Charles\nEugene's reign. Frederick and his wife Charlotte, Princess Royal, resided at\nLudwigsburg and employed Nikolaus Friedrich von Thouret to renovate the palace\nin the Neoclassical style. Thouret converted much of Ludwigsburg's interiors over\nthe reign of Frederick and later life of Charlotte. As a result of each architect's\nwork, Ludwigsburg is a combination of Baroque, Rococo, Neoclassical, and Empire\nstyle architecture.\nThe constitutions of the Free People's State and Kingdom of Württemberg were\nratified at Ludwigsburg Palace in 1919 and 1819, respectively. It was the residence\nfor four of Württemberg's monarchs and some other members of the House of\nWürttemberg and their families. The palace was opened to the public in 1918 and\nsurvived World War II intact. It underwent periods of restoration in the 1950s,\n1960s, and 1990s and again for the palace's 300th anniversary in 2004. The palace\nhad more than 350,000 visitors in 2017 and has hosted the Ludwigsburg Festival\nevery year since 1947.\n",
         "stats": {
-            "wordCount": 77,
-            "sentenceCount": 19,
-            "averageReadTime": 1
+            "wordCount": 255,
+            "sentenceCount": 16,
+            "averageReadTime": 8
         }
     },
     "summerized": {
-        "text": "GET home page. router.get('7', function (req, res, next) { res.json ('a'); const upload = multer({ dest: \"uploads/\" async function quickstart(targetPath) { // Imports the Google Cloud client library const vision = require( 'google-cloud/vision'); // Creates a client const client = new vision. ImageAnnotatorClient(); // Performs label detection on the image file const result = await client.documentTextDetection(targetPath) const fullTextAnnotation = result. fullTextAnnotation; console.log('Full text: ${fullTextAnnotation text}); return fullTextAnnotation. text: router.post('/imageUpload', upload.single pic\"), function (req, res, next) { const tempPath = req.file.path; var targetPath = path.join(\"uploads/\", reg.file.originalname); fs.rename (tempPath, targetPath, () => { quickstart(targetPath).then((value)=>{ res.json {",
+        "text": "Eberhard Louis, Duke of Württemberg, appointed Philipp Joseph Jenisch to direct the work and construction began in 1704. In 1707, Jenisch was replaced with Johann Friedrich Nette, who completed the majority of the palace and surrounding gardens. Nette died in 1714, and Donato Giuseppe Frisoni finished much of the palace facades. In the final year of construction, Eberhard Louis died and the Neue Hauptbau's interiors were left incomplete. [...] Frederick and his wife Charlotte, Princess Royal, resided at Ludwigsburg and employed Nikolaus Friedrich von Thouret to renovate the palace in the Neoclassical style. [...] The constitutions of the Free People's State and Kingdom of Württemberg were ratified at Ludwigsburg Palace in 1919 and 1819, respectively. It was the residence for four of Württemberg's monarchs and some other members of the House of Württemberg and their families. [...] It underwent periods of restoration in the 1950s, 1960s, and 1990s and again for the palace's 300th anniversary in 2004.",
         "stats": {
-            "wordCount": 94,
-            "sentenceCount": 19,
-            "averageReadTime": 1
+            "wordCount": 157,
+            "sentenceCount": 18,
+            "averageReadTime": 5
         }
-    }
+    },
+    "keywords": "palace,Ludwigsburg,Frederick,Württemberg,year,Charles,style"
 }
