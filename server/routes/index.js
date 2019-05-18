@@ -7,6 +7,10 @@ const express = require('express');
 const router = express.Router();
 // app const
 const app = express();
+const language = require('@google-cloud/language');
+
+const client = new language.LanguageServiceClient();
+
 const retext = require('retext');
 const keywords = require('retext-keywords');
 // setting local
@@ -23,6 +27,28 @@ router.get('/', function (req, res, next) {
 const upload = multer({
   dest: "./images"
 });
+
+function promiseGenerator(msg) {
+  return new Promise(async function(resolve, reject) {
+    const document = {
+      content: msg.text,
+      type: 'PLAIN_TEXT'
+    };
+    const [result] = await client.analyzeEntities({document});
+    const entities = result.entities;
+    let replacements = {}
+    entities.forEach(entity => {
+      if(entity.metadata && entity.metadata.wikipedia_url) {
+        replacements[entity.name] = `<a href=${entity.metadata.wikipedia_url}>${entity.name}</a>`
+      }
+    });
+    for(var key in replacements) {
+      var value = replacements[key];
+      msg.summary = msg.summary.replace(key, value);
+    }
+    return resolve(msg);
+  });
+}
 
 // sending the image for ocr
 async function getText(targetPath) {
@@ -89,7 +115,7 @@ function writeJsonToFile(newReturnValue) {
   fs.writeFile(__dirname+"/info.json", data, (err) => {
     if (err){
       console.log(err)
-    } else { 
+    } else {
       console.log("JSON to file")
     }
   })
@@ -131,10 +157,14 @@ router.post('/imageUpload', upload.single("pic"), function (req, res, next) {
   fs.rename(tempPath, targetPath, () => {
     getText(targetPath).then((value) => {
       summarize(value).then((returnValue) => {
-        clean_json(returnValue);
-        fs.readFile(__dirname + '/html/loading.html', 'utf8', (err, text) => {
-          console.log(__dirname);
-          res.send(text);
+        promiseGenerator(returnValue).then(function(returnValue) {
+          clean_json(returnValue);
+          fs.readFile(__dirname + '/html/loading.html', 'utf8', (err, text) => {
+            console.log(__dirname);
+            res.send(text);
+          });
+        }, function() {
+          console.log('error!');
         });
       })
     });
