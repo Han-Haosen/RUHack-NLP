@@ -23,7 +23,8 @@ async function getText(targetPath) {
   const [result] = await client.documentTextDetection(targetPath);
   const fullTextAnnotation = result.fullTextAnnotation;
   console.log(`Full text: ${fullTextAnnotation.text}`);
-  let textSent = { "key": '7338c0f741743c862fee7b5ec0a2db78', "txt": fullTextAnnotation.text, "sentences": 10 };
+  var sentenceCount = Math.floor(fullTextAnnotation.text.split(".").length / 2);
+  let textSent = { "key": '7338c0f741743c862fee7b5ec0a2db78', "txt": fullTextAnnotation.text, "sentences": sentenceCount };
   textSent = JSON.stringify(textSent);
   return textSent;
 }
