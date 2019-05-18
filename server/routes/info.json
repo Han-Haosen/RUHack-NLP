@@ -1,17 +1,17 @@
 {
     "original": {
-        "text": "/* GET home page. */\nrouter.get('7', function (req, res, next) {\nres.json ('a');\nconst upload = multer({\ndest: \"uploads/\"\nasync function quickstart(targetPath) {\n// Imports the Google Cloud client library\nconst vision = require( 'google-cloud/vision');\n// Creates a client\nconst client = new vision. ImageAnnotatorClient();\n// Performs label detection on the image file\nconst result = await client.documentTextDetection(targetPath)\nconst fullTextAnnotation = result. fullTextAnnotation;\nconsole.log('Full text: ${fullTextAnnotation text});\nreturn fullTextAnnotation. text:\nrouter.post('/imageUpload', upload.single pic\"), function (req, res, next) {\nconst tempPath = req.file.path;\nvar targetPath = path.join(\"uploads/\", reg.file.originalname);\nfs.rename (tempPath, targetPath, () => {\nquickstart(targetPath).then( (value)=>{\nres.json {\n",
+        "text": "ReGeneration is a 2010\nAmerican documentary film\nwritten and directed by Phillip\nMontgomery that looks at the\nissues facing today's youth\nand young adults, and the\ninfluences that contribute to\nAmerica's current culture of\napathy toward to political and\nsocial causes. [1]\n",
         "stats": {
-            "wordCount": 77,
-            "sentenceCount": 19,
+            "wordCount": 33,
+            "sentenceCount": 2,
             "averageReadTime": 1
         }
     },
     "summerized": {
-        "text": "GET home page. router.get('7', function (req, res, next) { res.json ('a'); const upload = multer({ dest: \"uploads/\" async function quickstart(targetPath) { // Imports the Google Cloud client library const vision = require( 'google-cloud/vision'); // Creates a client const client = new vision. ImageAnnotatorClient(); // Performs label detection on the image file const result = await client.documentTextDetection(targetPath) const fullTextAnnotation = result. fullTextAnnotation; console.log('Full text: ${fullTextAnnotation text}); return fullTextAnnotation. text: router.post('/imageUpload', upload.single pic\"), function (req, res, next) { const tempPath = req.file.path; var targetPath = path.join(\"uploads/\", reg.file.originalname); fs.rename (tempPath, targetPath, () => { quickstart(targetPath).then((value)=>{ res.json {",
+        "text": "ReGeneration is a 2010 <a href=https://en.wikipedia.org/wiki/United_States>American</a> documentary film written and directed by Phillip Montgomery that looks at the issues facing today's youth and young adults, and the influences that contribute to America's current culture of apathy toward to political and social causes.",
         "stats": {
-            "wordCount": 94,
-            "sentenceCount": 19,
+            "wordCount": 42,
+            "sentenceCount": 4,
             "averageReadTime": 1
         }
     }
