@@ -1,19 +1,19 @@
 {
     "original": {
-        "text": "ReGeneration is a 2010\nAmerican documentary film\nwritten and directed by Phillip\nMontgomery that looks at the\nissues facing today's youth\nand young adults, and the\ninfluences that contribute to\nAmerica's current culture of\napathy toward to political and\nsocial causes. [1]\n",
+        "text": "Eberhard Louis, Duke of Württemberg, appointed Philipp Joseph Jenisch to direct\nthe work and construction began in 1704. In 1707, Jenisch was replaced with\nJohann Friedrich Nette, who completed the majority of the palace and\nsurrounding gardens. Nette died in 1714, and Donato Giuseppe Frisoni finished\nmuch of the palace facades. In the final year of construction, Eberhard Louis died\nand the Neue Hauptbau's interiors were left incomplete. Charles Eugene's court\narchitect, Philippe de La Guêpière, completed and refurbished parts of the New\nHauptbau in the Rococo style, especially the palace theatre. Charles Eugene\nabandoned the palace for Stuttgart in 1775. Duke Frederick II, later King Frederick\n1, began using Ludwigsburg as his summer residence in the last years of Charles\nEugene's reign. Frederick and his wife Charlotte, Princess Royal, resided at\nLudwigsburg and employed Nikolaus Friedrich von Thouret to renovate the palace\nin the Neoclassical style. Thouret converted much of Ludwigsburg's interiors over\nthe reign of Frederick and later life of Charlotte. As a result of each architect's\nwork, Ludwigsburg is a combination of Baroque, Rococo, Neoclassical, and Empire\nstyle architecture.\nThe constitutions of the Free People's State and Kingdom of Württemberg were\nratified at Ludwigsburg Palace in 1919 and 1819, respectively. It was the residence\nfor four of Württemberg's monarchs and some other members of the House of\nWürttemberg and their families. The palace was opened to the public in 1918 and\nsurvived World War II intact. It underwent periods of restoration in the 1950s,\n1960s, and 1990s and again for the palace's 300th anniversary in 2004. The palace\nhad more than 350,000 visitors in 2017 and has hosted the Ludwigsburg Festival\nevery year since 1947.\n",
         "stats": {
-            "wordCount": 33,
-            "sentenceCount": 2,
-            "averageReadTime": 1
+            "wordCount": 255,
+            "sentenceCount": 16,
+            "averageReadTime": 8
         }
     },
     "summerized": {
-        "text": "ReGeneration is a 2010 <a href=https://en.wikipedia.org/wiki/United_States>American</a> documentary film written and directed by Phillip Montgomery that looks at the issues facing today's youth and young adults, and the influences that contribute to America's current culture of apathy toward to political and social causes.",
+        "text": "<a href=https://en.wikipedia.org/wiki/Eberhard_Louis,_Duke_of_<a href=https://en.wikipedia.org/wiki/Württemberg>Württemberg</a>>Eberhard Louis, Duke of Württemberg</a>, appointed <a href=https://de.wikipedia.org/wiki/Philipp_Joseph_Jenisch>Philipp Joseph Jenisch</a> to direct the work and construction began in 1704. In 1707, Jenisch was replaced with <a href=https://en.wikipedia.org/wiki/Johann_Friedrich_Nette>Johann Friedrich Nette</a>, who completed the majority of the palace and surrounding gardens. Nette died in 1714, and <a href=https://en.wikipedia.org/wiki/Donato_Giuseppe_Frisoni>Donato Giuseppe Frisoni</a> finished much of the palace facades. In the final year of construction, Eberhard Louis died and the Neue Hauptbau's interiors were left incomplete. [...] Frederick and his wife <a href=https://en.wikipedia.org/wiki/Charlotte,_North_Carolina>Charlotte</a>, Princess Royal, resided at <a href=https://en.wikipedia.org/wiki/Ludwigsburg>Ludwigsburg</a> and employed <a href=https://en.wikipedia.org/wiki/Nikolaus_Friedrich_von_Thouret>Nikolaus Friedrich von Thouret</a> to renovate the palace in the <a href=https://en.wikipedia.org/wiki/Neoclassicism>Neoclassical</a> style. [...] The constitutions of the Free People's State and <a href=https://en.wikipedia.org/wiki/Kingdom_of_Württemberg>Kingdom of Württemberg</a> were ratified at <a href=https://en.wikipedia.org/wiki/Ludwigsburg_Palace>Ludwigsburg Palace</a> in 1919 and 1819, respectively. It was the residence for four of Württemberg's monarchs and some other members of the <a href=https://en.wikipedia.org/wiki/House_of_Württemberg>House of Württemberg</a> and their families. [...] It underwent periods of restoration in the 1950s, 1960s, and 1990s and again for the palace's 300th anniversary in 2004.",
         "stats": {
-            "wordCount": 42,
-            "sentenceCount": 4,
-            "averageReadTime": 1
+            "wordCount": 169,
+            "sentenceCount": 42,
+            "averageReadTime": 8
         }
     },
-    "keywords": "palace,Ludwigsburg,Frederick,Württemberg,year,Charles,style"
+    "keywords": "palace, Ludwigsburg, Frederick, Württemberg, year, Charles, style"
 }
