@@ -1,0 +1,18 @@
+{
+    "original": {
+        "text": "/* GET home page. */\nrouter.get('7', function (req, res, next) {\nres.json ('a');\nconst upload = multer({\ndest: \"uploads/\"\nasync function quickstart(targetPath) {\n// Imports the Google Cloud client library\nconst vision = require( 'google-cloud/vision');\n// Creates a client\nconst client = new vision. ImageAnnotatorClient();\n// Performs label detection on the image file\nconst result = await client.documentTextDetection(targetPath)\nconst fullTextAnnotation = result. fullTextAnnotation;\nconsole.log('Full text: ${fullTextAnnotation text});\nreturn fullTextAnnotation. text:\nrouter.post('/imageUpload', upload.single pic\"), function (req, res, next) {\nconst tempPath = req.file.path;\nvar targetPath = path.join(\"uploads/\", reg.file.originalname);\nfs.rename (tempPath, targetPath, () => {\nquickstart(targetPath).then( (value)=>{\nres.json {\n",
+        "stats": {
+            "wordCount": 77,
+            "sentenceCount": 19,
+            "averageReadTime": 1
+        }
+    },
+    "summerized": {
+        "text": "GET home page. router.get('7', function (req, res, next) { res.json ('a'); const upload = multer({ dest: \"uploads/\" async function quickstart(targetPath) { // Imports the Google Cloud client library const vision = require( 'google-cloud/vision'); // Creates a client const client = new vision. ImageAnnotatorClient(); // Performs label detection on the image file const result = await client.documentTextDetection(targetPath) const fullTextAnnotation = result. fullTextAnnotation; console.log('Full text: ${fullTextAnnotation text}); return fullTextAnnotation. text: router.post('/imageUpload', upload.single pic\"), function (req, res, next) { const tempPath = req.file.path; var targetPath = path.join(\"uploads/\", reg.file.originalname); fs.rename (tempPath, targetPath, () => { quickstart(targetPath).then((value)=>{ res.json {",
+        "stats": {
+            "wordCount": 94,
+            "sentenceCount": 19,
+            "averageReadTime": 1
+        }
+    }
+}
